@@ -6,7 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 
-
+# Gemma devise
+gem 'devise', '~> 4.3'
 # Gemma coffescript
 gem 'coffee-script-source', '1.8.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
