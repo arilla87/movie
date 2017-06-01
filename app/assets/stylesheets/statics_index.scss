@@ -49,7 +49,16 @@ $white:#FFFFFF;
 	background-color: $black;
 	color: #FFFFFF;
 }
- 
-.fotos{
-	white-space: nowrap;
+
+.footer{
+	max-width: 1000px;
+	margin: auto;
+	background-color: $black;
+	margin-top: 10px;
+}
+
+.infooter{
+	color: $white;
+	font-size:small;
+	padding: 15px;
 }
