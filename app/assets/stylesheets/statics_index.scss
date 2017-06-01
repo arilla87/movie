@@ -2,7 +2,11 @@ $green:#339933;
 $black:#000000;
 $white:#FFFFFF;
 
-.navbar-custom {
+.wrapper{
+	max-width: 1000px;
+	margin: auto;
+}
+.custom {
     background-color:$green;
     color:#ffffff;
 }
@@ -10,6 +14,7 @@ $white:#FFFFFF;
 .login {
     float: right;
     width: 75px;
+    padding-right: 50px;
 }
 
 .signup {
@@ -22,9 +27,10 @@ $white:#FFFFFF;
 }
 
 .pullRight{
-	float: right !important;
+	float: right;
 	 white-space: nowrap;
 	font-size:small;
+	padding-right: 50px;
 }
 
 .inputBox{
@@ -39,7 +45,11 @@ $white:#FFFFFF;
 
 .underNav{
 	margin-top: 1px;
-	margin-bottom: 1px;
+	margin-bottom: 1px;	
 	background-color: $black;
 	color: #FFFFFF;
+}
+ 
+.fotos{
+	white-space: nowrap;
 }
