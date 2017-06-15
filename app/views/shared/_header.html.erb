@@ -7,13 +7,27 @@
 						<div class="col-sm-3">
 							<p>RT Critics</p>
 						</div>
-						<div class="col-sm-2">
-							<p><%= link_to "About", about_path %></p>
-							
-						</div>
-						<div class="col-sm-2">
-							<p><%=link_to "Login", new_user_session_path %></p>
-						</div>
+						<% if user_signed_in?%>
+							<div class="col-sm-2">
+								<p><%= link_to current_user.email , settings_path %></p>
+							</div>
+						<% else %>
+							<div class="col-sm-2">
+								<p><%= link_to "About", about_path %></p>	
+							</div>
+						<% end %>
+
+						<% if user_signed_in?%>
+						<br>
+							<div class="col-sm-2">
+								<p><%=link_to "Log out", destroy_user_session_path, method: :delete %></p>
+							</div>
+						<% else %>
+							<div class="col-sm-2">
+								<p><%=link_to "Login", new_user_session_path %></p>
+							</div>
+						<% end %>
+
 					</div>
 				</div>
 				<div class="row">

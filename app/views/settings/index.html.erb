@@ -1,0 +1,49 @@
+<div class="wrapper">
+	<%= render "shared/header" %>
+		<div class="row rowPrincipal">
+			<h3>Benvingut <%= current_user.email%></h3>
+		</div>
+
+		<div class="row rowPrincipal">
+			<h4>Account settings</h4>
+		</div>
+		<div class="col-sm-6">
+			<table class="table table-bordered">
+				<tr>
+					<th>Id</th>
+					<th>Email</th>
+					<th>Current sign in At</th>
+					<th>Sign in count</th>
+					<th>Created At</th>
+				</tr>
+				<tr>
+					<td><%= current_user.id%></td>
+					<td><%= current_user.email%></td>
+					<td><%= current_user.current_sign_in_at%></td>
+					<td><%= current_user.sign_in_count%></td>
+					<td><%= current_user.created_at%></td>
+
+				</tr>
+			</table>
+		</div>
+		<div class="col-sm-6">
+	<%if @setting.nil?%>
+ 
+   	 
+    <%= link_to 'Añadir', new_setting_path, title:"Añadir setting !!", class:"btn btn-md btn-danger fa fa-1x fa-address-book nodecor pull-right", style:"color:white;" %>
+ <%else%>
+ 
+   	<p>Country&nbsp;<%= @setting.country %></p><br/>
+   	 <p>Language&nbsp;<%= @setting.language %></p><br/>
+ 
+      	<%= link_to ' Editar', edit_setting_path(@setting.id), :title => "Editar", class: 'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
+       	<br></br>
+ <%end%>
+ 		</div>
+
+</div>
+<%= render "shared/footer" %>
+<%= link_to "Sobre nosotros", about_path %>
+<%=link_to "Login", new_user_session_path %>
+<%=link_to "Sign up", new_user_registration_path %>
+
