@@ -13,9 +13,6 @@
 	<%= link_to select_movies_path(id: peli.id) do %>
 		<button class="btn btn-info"><%= peli.precio / 100 %>&nbsp;€</button>
 	<% end %>
-	
-	<%= link_to "Editar", edit_pelicula_path(peli), :nom => "Editar", :class => 'btn btn-sm btn-warning', style:"color: white;" %>
-	<%= link_to 'Eliminar', pelicula_path(peli), method: :delete, class:"btn btn-sm btn-danger" %>
 	<br>
 	<br>
 </div>
