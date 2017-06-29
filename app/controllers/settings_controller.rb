@@ -5,6 +5,7 @@ class SettingsController < ApplicationController
     @user = current_user
     @setting = current_user.setting
     @payment = Payment.where(user_id: @user.id).all
+   
   end
 
   def show

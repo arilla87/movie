@@ -14,7 +14,7 @@ gem 'jquery-rails'
 
 gem 'stripe'
 
-
+gem 'bcrypt', '~> 3.1.11'
 # Gemma devise
 gem 'devise', '~> 4.3'
 # Gemma coffescript

@@ -9,9 +9,7 @@ class ChargesController < ApplicationController
 
 
   def create
-  # Amount in cents
-  @amount = @precio
-
+  @amount = params[:precio]
   customer = Stripe::Customer.create(
   	:email => params[:stripeEmail],
   	:source  => params[:stripeToken]
@@ -23,6 +21,9 @@ class ChargesController < ApplicationController
   	:description => 'Rails Stripe customer',
   	:currency    => 'eur'
   	)
+  current_user.payments.create(subscription: false, channel: 'stripe', amount: @amount)
+  flash[:success] = t('flash.payment')
+  render :new
 
 	rescue Stripe::CardError => e
 	flash[:error] = e.message

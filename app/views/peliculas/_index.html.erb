@@ -1,17 +1,23 @@
-<% @pelicula.each do |peli| %>
+<% @peliculas.each do |peli| %>
 <div class="row text-center">
+	<div class="col-md-2">
 	<%= peli.id %>	
 	<img src="<%= peli.url %>">
+	</div>
+	<div class="col-md-10">
 	<%= peli.name %>
-	<%= peli.stars %>
-	<%= peli.main_actor %>
-	<%= peli.year %>
+	<%= peli.stars %><br>
+	<%= peli.main_actor %><br>
+	<%= peli.year %><br>
 	<%= link_to 'Visualizar', pelicula_path(peli), :nom => "Visualizar", :class => 'btn btn-sm btn-success', style:"color: white;" %>
-	<button class="btn btn-info"><%= peli.precio %>&nbsp;€</button>
-    <%= link_to "Editar", edit_pelicula_path(peli), :nom => "Editar", :class => 'btn btn-sm btn-warning', style:"color: white;" %>
-    <%= link_to 'Eliminar', pelicula_path(peli), method: :delete, class:"btn btn-sm btn-danger" %>
+	<%= link_to select_movies_path(id: peli.id) do %>
+		<button class="btn btn-info"><%= peli.precio / 100 %>&nbsp;€</button>
+	<% end %>
+	
+	<%= link_to "Editar", edit_pelicula_path(peli), :nom => "Editar", :class => 'btn btn-sm btn-warning', style:"color: white;" %>
+	<%= link_to 'Eliminar', pelicula_path(peli), method: :delete, class:"btn btn-sm btn-danger" %>
 	<br>
 	<br>
-
+</div>
 </div>
 <% end %>

@@ -44,14 +44,26 @@
 		</div>	
 	</div>
 </div>
-<div class="row text-center">
-	<div class="col-xs-12">
-		<%= link_to new_charge_path do %>
-		<button class="btn btn-info">5.00$</button>
-		<% end %>
-	</div>
-</div>
-v<%= render "peliculas/index" %>
+
+<br>
+<br>
+<br>
+<div class="col-m-6" style="text-align:center;">
+     <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+         <%= text_field_tag :search_name, params[:search_name], placeholder: "Buscar por Titulo" %>
+         <%= submit_tag "Buscar" %>
+     <% end %>
+   </div>
+   <div class="col-m-6" style="text-align:center;">
+     <%= form_tag(root_path, :method => "get", id: "search-year-form") do %>
+         <%= text_field_tag :search_year, params[:search_year], placeholder: "Buscar por Año" %>
+         <%= submit_tag "Buscar" %>
+     <% end %>
+   </div>
+ </div>
+ <hr>
+
+<%= render "peliculas/index" %>
 <%= render "shared/footer" %>
 <%= link_to "Sobre nosotros", about_path %>
 <%=link_to "Login", new_user_session_path %>

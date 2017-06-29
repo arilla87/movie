@@ -1,11 +1,11 @@
 <%if !flash[:success].blank?%>
 <div class="row">
-    <div class="col-sm-12 col-md-6 col-md-offset-3" style="padding:25px 0">
-<%= render partial: "shared/flash_messages", flash: flash %>    </div>
-</div>
-<%end%>
-<div class="wrapper">
-	<%= render "shared/header" %>
+	<div class="col-sm-12 col-md-6 col-md-offset-3" style="padding:25px 0">
+		<%= render partial: "shared/flash_messages", flash: flash %>    </div>
+	</div>
+	<%end%>
+	<div class="wrapper">
+		<%= render "shared/header" %>
 		<div class="row rowPrincipal">
 			<h3>Benvingut <%= current_user.email%></h3>
 		</div>
@@ -32,19 +32,18 @@
 			</table>
 		</div>
 		<div class="col-sm-6">
-	 <!-- COMPROBACIO DE SETTING SI NO ES NULL -->   	 
-		 <%if !@setting.nil?%>
-		   	 <p>Country&nbsp;<%= @setting.country %></p><br/><br/>
-		   	 <p>Language&nbsp;<%= @setting.language %></p><br/><br/>
-		      	<%= link_to ' Editar', edit_setting_path(@setting.id), :title => "Editar", class: 'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
-		       	<br></br>    
-		 <%else%>
-		   	<%= link_to 'Añadir', new_setting_path, title:"Añadir setting !!", class:"btn btn-md btn-danger fa fa-1x fa-address-book nodecor pull-right", style:"color:white;" %>
-		 <%end%>
- 		</div>
-</div>
-<%= render "shared/footer" %>
-<%= link_to "Sobre nosotros", about_path %>
-<%=link_to "Login", new_user_session_path %>
-<%=link_to "Sign up", new_user_registration_path %>
+			<%if !@setting.nil?%>
+			<p>Country&nbsp;<%= @setting.country %></p><br/><br/>
+			<p>Language&nbsp;<%= @setting.language %></p><br/><br/>
+			<%= link_to ' Editar', edit_setting_path(@setting.id), :title => "Editar", class: 'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
+			<br></br>    
+			<%else%>
+			<%= link_to 'Añadir', new_setting_path, title:"Añadir setting !!", class:"btn btn-md btn-danger fa fa-1x fa-address-book nodecor pull-right", style:"color:white;" %>
+			<%end%>
+		</div>
+	</div>
+	<%= render "shared/footer" %>
+	<%= link_to "Sobre nosotros", about_path %>
+	<%=link_to "Login", new_user_session_path %>
+	<%=link_to "Sign up", new_user_registration_path %>
 
