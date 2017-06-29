@@ -11,7 +11,7 @@
 		<p>Año: <%= peli.year %></p>
 		<%= link_to 'Visualizar', pelicula_path(peli), :nom => "Visualizar", :class => 'btn btn-sm btn-success', style:"color: white;" %>
 		<%= link_to select_movies_path(id: peli.id) do %>
-			<button class="btn btn-info"><%= peli.precio%>&nbsp;€</button>
+			<button class="btn btn-info"><%= peli.precio / 100 %>€</button>
 		<% end %>
 	
 	</div>
