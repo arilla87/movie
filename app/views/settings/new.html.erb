@@ -1,13 +1,22 @@
-<%= form_for(@setting) do |f| %>
+<%if !flash[:danger].blank?%>
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-md-offset-3" style="padding:25px 0">
+        <%= render partial: "shared/flash_messages", flash: flash %>    </div>
+    </div>
+    <%end%>
+    <%= form_for @setting do |setting|%>
  
-    	<div class="field">
-        	<%= f.text_field :country, placeholder: "Country", class:"form-control" %>
-    	</div>
-    	<div class="field">
-        	<%= f.text_field :language, placeholder: "Language", class:"form-control" %>
-    	</div>    
-    	 
-    	<div class="field">
-        	<%= f.submit "Guardar", class:"btn btn-sm btn-danger white pull-right", style:"margin-top: 15px;" %>
-    	</div>
-	<% end %>
+    <div class="field">
+        <p>Selecciona un pais: </p>
+        <%= setting.select :country, options_for_country, prompt: 'Select One', class: 'form-control' %>
+    </div>
+    <hr>
+    <div class="field">
+        <p>Selecciona un idioma:</p>
+        <%= setting.select :language, options_for_language, prompt: 'Select One', class: 'form-control' %>
+    </div>
+    <br>
+
+    <%= setting.submit "enviar datos", class:'btn btn-sm btn-info boto' %>
+
+    <% end %>

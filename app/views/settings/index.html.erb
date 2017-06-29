@@ -1,8 +1,9 @@
 <%if !flash[:success].blank?%>
 <div class="container">
-<div class="row">
-	<div class="col-sm-12 col-md-6 col-md-offset-3" style="padding:25px 0">
-		<%= render partial: "shared/flash_messages", flash: flash %>    </div>
+	<div class="row">
+		<div class="col-sm-12 col-md-6 col-md-offset-3" style="padding:25px 0">
+			<%= render partial: "shared/flash_messages", flash: flash %>    
+		</div>
 	</div>
 	<%end%>
 	<div class="wrapper">
@@ -32,23 +33,19 @@
 				</tr>
 			</table>
 		</div>
-		<div class="row">
-    <div class="col-xs-6">
-    <table class="table table-bordered">
-				<tr>
-					<th>Country</th>
-					<th>Language</th>
-					
-				</tr>
-				<tr>
-					<td><%= @setting.country %></td>
-					<td><%= @setting.language %></td>
-					
-				</tr>
-			</table>
-     </div>
- 
-  </div>
-   <%= link_to "Editar", edit_setting_path(@setting), :nom => "Editar", :class => 'btn btn-info'%>
-	<%= render "shared/footer" %>
+		
+		<div class="col-sm-6">
+
+			
+			<%if !@setting.nil?%>
+			<p>Country: <%= @setting.country %></p><br/><br/>
+			<p>Language: <%= @setting.language %></p><br/><br/>
+
+
+			<%= link_to ' Editar', edit_setting_path(@setting.id), :title => "Editar", class: 'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
+			<%else%>
+			<%= link_to 'Añadir', new_setting_path, title:"Añadir setting !!", class:"btn btn-md btn-danger fa fa-1x fa-address-book nodecor pull-right", style:"color:white;" %>
+			<%end%>
+		</div>
 	</div>
+</div>
