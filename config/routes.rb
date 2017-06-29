@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :peliculas
   resources :settings
-
+  
+  resources :charges
   get '/about' => 'statics#about', :as => :about
 
   root :to => "statics#index"

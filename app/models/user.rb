@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :top_movies
   has_one :setting
+  has_many :payments
 end

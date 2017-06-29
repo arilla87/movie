@@ -12,7 +12,9 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'jquery-rails'
 
-gem 'bcrypt', '~> 3.1.11'
+gem 'stripe'
+
+
 # Gemma devise
 gem 'devise', '~> 4.3'
 # Gemma coffescript

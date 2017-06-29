@@ -16,25 +16,32 @@
 #
 # This would use the information in config/locales/es.yml.
 #
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+es:
+  devise:
+    failure:
+      admin_user:
+        unauthenticated: "Por favor, inicia sesion"
+    sessions:
+      admin_user:
+        signed_in: "Has iniciado session correctamente"
+      user:
+        signed_in: "Has iniciado session correctamente"
+  activerecord:
+    errors:
+      models:
+        setting:
+          attributes:
+            country:
+              too_short: "ha de tener al menos dos letras"
+            language:
+              too_short: "ha de tener al menos dos letras"
   hello: "Hello world"
   flash:
     exito: "updated succesfully"
-    letras_minimas: "Minimo dos letras!"
     payment: "Has comprado con exito!"
   mailer:
     el_titulo_html: "Bienvenid@ a la aplicación %{email}"
-    default: "arilla94@gmail.com"
+    default: "support@merliapps.com"

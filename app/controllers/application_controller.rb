@@ -4,5 +4,5 @@ class ApplicationController < ActionController::Base
   # def after_sign_in_path_for(resource)
   #   settings_path
   # end
-
+  add_flash_types :danger, :info, :warning, :succes
 end
