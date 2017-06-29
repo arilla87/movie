@@ -23,7 +23,7 @@ class ChargesController < ApplicationController
   	)
   current_user.payments.create(subscription: false, channel: 'stripe', amount: @amount)
   flash[:success] = t('flash.payment')
-  redirect_to root_path
+  render :new
 
 	rescue Stripe::CardError => e
 	flash[:error] = e.message
