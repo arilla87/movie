@@ -32,14 +32,7 @@
 			</table>
 		</div>
 		<div class="col-sm-6">
-			<%if !@setting.nil?%>
-			<p>Country&nbsp;<%= @setting.country %></p><br/><br/>
-			<p>Language&nbsp;<%= @setting.language %></p><br/><br/>
-			<%= link_to ' Editar', edit_setting_path(@setting.id), :title => "Editar", class: 'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
-			<br></br>    
-			<%else%>
-			<%= link_to ' Editar', edit_setting_path(@setting.id), :title => "Añadir", class: 'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
-			<%end%>
+			
 		</div>
 	</div>
 	<%= render "shared/footer" %>

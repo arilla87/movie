@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :charges
   resources :payments
   get '/about' => 'statics#about', :as => :about
-  get '/settings' => 'settings#index', :as => :settinsIndex
+
   root "statics#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
