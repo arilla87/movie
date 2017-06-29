@@ -38,7 +38,7 @@
 			<%= link_to ' Editar', edit_setting_path(@setting.id), :title => "Editar", class: 'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
 			<br></br>    
 			<%else%>
-			<%= link_to 'Añadir', new_setting_path, title:"Añadir setting !!", class:"btn btn-md btn-danger fa fa-1x fa-address-book nodecor pull-right", style:"color:white;" %>
+			<%= link_to ' Editar', edit_setting_path(@setting.id), :title => "Añadir", class: 'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
 			<%end%>
 		</div>
 	</div>
