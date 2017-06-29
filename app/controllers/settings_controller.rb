@@ -1,5 +1,6 @@
 class SettingsController < ApplicationController
-	layout "admin"
+	before_action :authenticate_user!
+  layout "admin"
 
   def index
     @user = current_user

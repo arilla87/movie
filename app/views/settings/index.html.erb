@@ -1,4 +1,5 @@
 <%if !flash[:success].blank?%>
+<div class="container">
 <div class="row">
 	<div class="col-sm-12 col-md-6 col-md-offset-3" style="padding:25px 0">
 		<%= render partial: "shared/flash_messages", flash: flash %>    </div>
@@ -33,26 +34,21 @@
 		</div>
 		<div class="row">
     <div class="col-xs-6">
-      <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="collapse" data-target="#country"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;Country</button>
-      <div id="country" class="collapse in">
-        <div class="well text-center">
-          <%= @setting.country %>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="collapse" data-target="#lang"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Language</button>
-      <div id="lang" class="collapse in">
-        <div class="well text-center">
-          <%= @setting.language %>
-        </div>
-      </div>
-    </div>
+    <table class="table table-bordered">
+				<tr>
+					<th>Country</th>
+					<th>Language</th>
+					
+				</tr>
+				<tr>
+					<td><%= @setting.country %></td>
+					<td><%= @setting.language %></td>
+					
+				</tr>
+			</table>
+     </div>
+ 
   </div>
-  <%= link_to "Editar", edit_setting_path(@setting), :nom => "Editar", :class => 'btn btn-warning btn-block btn-lg', style:"color: white;" %>
-	</div>
+   <%= link_to "Editar", edit_setting_path(@setting), :nom => "Editar", :class => 'btn btn-info'%>
 	<%= render "shared/footer" %>
-	<%= link_to "Sobre nosotros", about_path %>
-	<%=link_to "Login", new_user_session_path %>
-	<%=link_to "Sign up", new_user_registration_path %>
-
+	</div>
